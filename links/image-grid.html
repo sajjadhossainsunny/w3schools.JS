@@ -161,19 +161,14 @@
 
         btnsArr.map((items) => {
             items.addEventListener("click", function () {
-                let current = document.getElementsByClassName("active");
-                current[0].className = current[0].className.replace(" active", "");
-                this.className += " active";
+                let current = document.querySelectorAll(".active");
+                let currentArr = Array.from(current);
+                currentArr.map((item) => {
+                    item.className = item.className.replace(" active", "");
+                })
+                items.className += " active";
             });
         });
-
-        // for (var i = 0; i < btns.length; i++) {
-        //     btns[i].addEventListener("click", function () {
-        //         let current = document.getElementsByClassName("active");
-        //         current[0].className = current[0].className.replace(" active", "");
-        //         this.className += " active";
-        //     });
-        // }
     </script>
 </body>
 
